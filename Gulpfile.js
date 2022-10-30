@@ -19,7 +19,9 @@ export const npmu  = (cb) => {
     }, {
       path: join(__dirname, '../npmu'), packageName: '@franzzemen/npmu',
     }, {
-      path: join(__dirname, './'), packageName: '@franzzemen/app-utility',
+      path: join(__dirname, '../execution-context'), packageName: '@franzzemen/execution-context',
+    }, {
+      path: join(__dirname, './'), packageName: '@franzzemen/app-execution-context',
     }])
     .then(() => {
       console.log('cb...');
