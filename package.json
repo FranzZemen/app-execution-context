@@ -1,6 +1,6 @@
 {
   "name": "@franzzemen/app-execution-context",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Application Execution Context",
   "type": "module",
   "main": "index.js",

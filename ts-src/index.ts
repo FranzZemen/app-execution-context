@@ -1,3 +1,5 @@
+export {ExecutionContext, isExecutionContext, validate as validateExecutionContext} from '@franzzemen/execution-context';
+
 import {ExecutionContext, executionContextSchema} from '@franzzemen/execution-context';
 import deepmerge from 'deepmerge';
 import Validator, {ValidationError, ValidationSchema} from 'fastest-validator';
