@@ -12,7 +12,7 @@ describe('app-execution-context tests', () => {
     let appConfig: AppExecutionContext = {};
     const result = validate(appConfig);
     result.should.be.true;
-    appConfig.appContext.should.equal(AppExecutionContextDefaults.AppContext);
+    appConfig.app.appContext.should.equal(AppExecutionContextDefaults.AppContext);
     appConfig.execution.should.exist;
   })
 })
