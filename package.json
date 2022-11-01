@@ -1,6 +1,6 @@
 {
   "name": "@franzzemen/app-execution-context",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Application Execution Context",
   "type": "module",
   "main": "index.js",
@@ -24,6 +24,7 @@
     "@franzzemen/gulp-base": "^12.1.1",
     "@franzzemen/npmu": "^2.0.17",
     "@types/chai": "^4.3.3",
+    "@types/lodash": "^4.14.187",
     "@types/mocha": "^10.0.0",
     "@types/node": "^18.11.8",
     "chai": "^4.3.6",
@@ -35,6 +36,6 @@
   },
   "dependencies": {
     "@franzzemen/execution-context": "^2.0.1",
-    "deepmerge": "^4.2.2"
+    "lodash": "^4.17.21"
   }
 }

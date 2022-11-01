@@ -1,11 +1,13 @@
 export {
   ExecutionContext, isExecutionContext, validate as validateExecutionContext
 } from '@franzzemen/execution-context';
-
-import {ExecutionContext, executionContextSchema} from '@franzzemen/execution-context';
-import deepmerge from 'deepmerge';
-import Validator, {ValidationError, ValidationSchema} from 'fastest-validator';
+import {createRequire} from 'node:module';
 import {isPromise} from 'util/types';
+import {ExecutionContext, executionContextSchema} from '@franzzemen/execution-context';
+import Validator, {ValidationError, ValidationSchema} from 'fastest-validator';
+
+const requireModule = createRequire(import.meta.url);
+const _merge = requireModule('lodash').merge;
 
 export class AppExecutionContextDefaults {
   static AppContext = 'Global';
@@ -40,7 +42,7 @@ export const appSchemaWrapper: ValidationSchema = {
   props: appSchema
 };
 
-export const appExecutionContextSchema: ValidationSchema = deepmerge({
+export const appExecutionContextSchema: ValidationSchema = _merge({
   app: appSchemaWrapper,
 }, executionContextSchema);
 
