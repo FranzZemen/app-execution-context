@@ -67,5 +67,5 @@ export function validate(context: AppExecutionContext): true | ValidationError[]
 }
 
 export function isAppExecutionContext(context: any | AppExecutionContext): context is AppExecutionContext {
-  return 'appContext' in context;
+  return context &&  'appContext' in context;
 }
