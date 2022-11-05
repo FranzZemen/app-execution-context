@@ -1,5 +1,5 @@
 export {
-  ExecutionContext, isExecutionContext, validate as validateExecutionContext
+  ExecutionContext, isExecutionContext, validate as validateExecutionContext, isAsyncCheckFunction, isCheckFunction, isSyncCheckFunction, CheckFunction
 } from '@franzzemen/execution-context';
 import {createRequire} from 'node:module';
 import {isPromise} from 'util/types';
