@@ -1,10 +1,17 @@
 export {
-  ExecutionContext, isExecutionContext, validate as validateExecutionContext, isAsyncCheckFunction, isCheckFunction, isSyncCheckFunction, CheckFunction
+  ExecutionContext,
+  isExecutionContext,
+  ExecutionContextDefaults,
+  validate as validateExecutionContext,
+  isAsyncCheckFunction,
+  isCheckFunction,
+  isSyncCheckFunction,
+  CheckFunction
 } from '@franzzemen/execution-context';
-import {createRequire} from 'node:module';
-import {isPromise} from 'util/types';
 import {ExecutionContext, executionContextSchema} from '@franzzemen/execution-context';
 import Validator, {ValidationError, ValidationSchema} from 'fastest-validator';
+import {createRequire} from 'node:module';
+import {isPromise} from 'util/types';
 
 const requireModule = createRequire(import.meta.url);
 const _merge = requireModule('lodash').merge;
@@ -43,7 +50,7 @@ export const appSchemaWrapper: ValidationSchema = {
 };
 
 export const appExecutionContextSchema: ValidationSchema = _merge({
-  app: appSchemaWrapper,
+  app: appSchemaWrapper
 }, executionContextSchema);
 
 
@@ -67,5 +74,5 @@ export function validate(context: AppExecutionContext): true | ValidationError[]
 }
 
 export function isAppExecutionContext(context: any | AppExecutionContext): context is AppExecutionContext {
-  return context &&  'appContext' in context;
+  return context && 'appContext' in context;
 }
