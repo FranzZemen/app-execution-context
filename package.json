@@ -1,9 +1,17 @@
 {
   "name": "@franzzemen/app-execution-context",
-  "version": "2.1.1",
+  "version": "3.0.1",
   "description": "Application Execution Context",
   "type": "module",
-  "main": "index.js",
+  "main": "./publish/dist/cjs/index.js",
+  "module": "publish/dist/mjs/index.js",
+  "types": "publish/dist/mjs/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./publish/dist/mjs/index.js",
+      "require": "./publish/dist/cjs/index.js"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,13 +29,13 @@
   },
   "homepage": "https://github.com/FranzZemen/app-execution-context#readme",
   "devDependencies": {
-    "@franzzemen/gulp-base": "^12.1.1",
-    "@franzzemen/npmu": "^2.0.18",
-    "@types/chai": "^4.3.3",
+    "@franzzemen/gulp-base": "^17.0.9",
+    "@franzzemen/npmu": "^4.0.1",
+    "@types/chai": "^4.3.4",
     "@types/lodash": "^4.14.188",
     "@types/mocha": "^10.0.0",
     "@types/node": "^18.11.9",
-    "chai": "^4.3.6",
+    "chai": "^4.3.7",
     "fastest-validator": "^1.15.0",
     "gulp": "^4.0.2",
     "gulp-mocha": "^8.0.0",
@@ -35,7 +43,7 @@
     "typescript": "^4.8.4"
   },
   "dependencies": {
-    "@franzzemen/execution-context": "^2.0.4",
+    "@franzzemen/execution-context": "^4.0.5",
     "lodash": "^4.17.21"
   }
 }

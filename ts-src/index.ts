@@ -1,10 +1,7 @@
 import {ExecutionContext, executionContextSchema} from '@franzzemen/execution-context';
 import Validator, {ValidationError, ValidationSchema} from 'fastest-validator';
-import {createRequire} from 'node:module';
 import {isPromise} from 'util/types';
-
-const requireModule = createRequire(import.meta.url);
-const _merge = requireModule('lodash').merge;
+import _ from 'lodash';
 
 export class AppExecutionContextDefaults {
   static AppContext = 'Global';
@@ -39,7 +36,7 @@ export const appSchemaWrapper: ValidationSchema = {
   props: appSchema
 };
 
-export const appExecutionContextSchema: ValidationSchema = _merge({
+export const appExecutionContextSchema: ValidationSchema = _.merge({
   app: appSchemaWrapper
 }, executionContextSchema);
 
@@ -53,7 +50,7 @@ export const appExecutionContextSchemaWrapper: ValidationSchema = {
 
 const check = (new Validator({useNewCustomCheckerFunction: true})).compile(appExecutionContextSchema);
 
-export function validate(context: AppExecutionContext): true | ValidationError[] {
+export function validate(context: AppExecutionContext, ignoreDefaults: boolean = false): true | ValidationError[] {
   const result = check(context);
   if (isPromise(result)) {
     throw new Error('Unexpected promise validating AppExecutionContext, it should not be async');

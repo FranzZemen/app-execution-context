@@ -1,7 +1,7 @@
 import 'mocha';
 import * as chai from 'chai';
-import {validate} from '../build/index.js';
-import {AppExecutionContextDefaults, AppExecutionContext} from '../publish/index.js';
+//@ts-ignore
+import {validate, AppExecutionContextDefaults, AppExecutionContext} from '@franzzemen/app-execution-context';
 
 
 const expect = chai.expect;
