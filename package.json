@@ -1,6 +1,6 @@
 {
   "name": "@franzzemen/app-execution-context",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Application Execution Context",
   "type": "module",
   "main": "./publish/cjs/index.js",
@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/FranzZemen/app-execution-context#readme",
   "devDependencies": {
-    "@franzzemen/gulp-base": "^18.0.0",
+    "@franzzemen/gulp-base": "^19.0.1",
     "@franzzemen/npmu": "^4.0.4",
     "@types/chai": "^4.3.4",
     "@types/lodash": "^4.14.189",
@@ -43,7 +43,7 @@
     "typescript": "^4.9.3"
   },
   "dependencies": {
-    "@franzzemen/execution-context": "^5.0.0",
+    "@franzzemen/execution-context": "^5.0.2",
     "lodash": "^4.17.21"
   }
 }
